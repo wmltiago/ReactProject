@@ -1,0 +1,15 @@
+.navbarAdm{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+    }
+
+    .navbarAdm h2 a{
+        opacity: 1;
+    }
+
+    .navbarAdm ul{
+        display: flex;
+        gap: 1rem;
+    }
