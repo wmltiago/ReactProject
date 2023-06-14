@@ -27,7 +27,7 @@ export const Cart = () => {
       {totalAmount > 0 ? (
         <div className="checkout">
           <div className="subtotal">
-          <h2>Subtotal: ${totalAmount.toLocaleString()}</h2>
+          <h2>Subtotal: R${totalAmount.toLocaleString()}</h2>
           </div>
           <div className="buttons">
             <button onClick={() => navigate("/")}>Continue Shopping</button>

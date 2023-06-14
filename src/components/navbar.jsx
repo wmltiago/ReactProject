@@ -10,12 +10,22 @@ export const Navbar = () => {
     <div className="navbar">
       <div className="logo">
         <Link to="/" id="NavTitle">
-          P&H Library 
+          Livraria Dracol
         </Link>
       </div>
       <div className="links">
-      <Link to="/adm" className={location.pathname === "/adm" ? "active-link" : ""}>
-          Gerenciar
+      
+        <Link to="/formAutor" className={location.pathname === "/formAutor" ? "active-link" : ""}>
+          Cadastrar Autor
+        </Link>
+        <Link to="/formEditora" className={location.pathname === "/formEditora" ? "active-link" : ""}>
+          Cadastrar Editora
+        </Link>
+        <Link to="/formCategoria" className={location.pathname === "/formCategoria" ? "active-link" : ""}>
+          Cadastrar Categoria
+        </Link>
+        <Link to="#" >
+           |
         </Link>
 
         <Link to="/" className={location.pathname === "/" ? "active-link" : ""}>
@@ -25,7 +35,7 @@ export const Navbar = () => {
           to="/contact"
           className={location.pathname === "/contact" ? "active-link" : ""}
         >
-          Contact
+          Contato
         </Link>
         <Link to="/cart" id="cartlink" className={location.pathname === "/cart" ? "active-link" : ""}>
           <ShoppingCart size={32} />
