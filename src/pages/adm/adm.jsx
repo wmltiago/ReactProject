@@ -12,7 +12,7 @@ const Adm = () => {
 
     try {
       
-      const response = await axios.get("https://jsonplaceholder.typicode.com/posts");
+      const response = await axios.get("https://jsonplaceholder.typicode.com/photos");
 
       console.log(response);
       const data = response.data;
@@ -43,8 +43,8 @@ const Adm = () => {
 
           livros.map((livro) => (
             <div className="livro" key={livro.id}>
-              <h2>{livro.title}</h2>
-              <p>{livro.body}</p>
+              <h2>{livro.title}</h2>              
+              <img src={livro.url} alt="Minha Figura"></img>
               <Link to={`/livros/${livro.id}`} className='btn'>
                 Detalhes do Livro
               </Link>
