@@ -10,6 +10,7 @@ import Adm from "./pages/adm/adm";
 import { FormAutor } from "./pages/adm/formAutor";
 import { FormEditora } from "./pages/adm/formEditora";
 import { FormCategoria } from "./pages/adm/formCategoria";
+import { FormLivro } from "./pages/adm/formLivro";
 
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
         <Router>
           <Navbar />
           <Routes>
+          <Route path="/formLivro" element={<FormLivro/>} />
            <Route path="/adm" element={<Adm />} />
            <Route path="/formAutor" element={<FormAutor/>} />
            <Route path="/formEditora" element={<FormEditora/>} />

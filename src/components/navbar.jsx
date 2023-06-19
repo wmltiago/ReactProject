@@ -14,6 +14,9 @@ export const Navbar = () => {
         </Link>
       </div>
       <div className="links">
+      <Link to="/formLivro" className={location.pathname === "/formLivro" ? "active-link" : ""}>
+          Cadastrar Livro
+        </Link>
       
         <Link to="/formAutor" className={location.pathname === "/formAutor" ? "active-link" : ""}>
           Cadastrar Autor
