@@ -3,30 +3,30 @@ import "./cssAdm/listarAutor.css"
 import axios from "axios";
 import { Link, useLocation } from "react-router-dom";
 
-const ListarCategoria = () => {
+const ListarEditora = () => {
     const location = useLocation();
 
-    const [categorias, setCategorias] = useState([]);
+    const [editoras, setEditoras] = useState([]);
 
     useEffect(() => {
-        buscaCategorias();
+      buscaEditoras();
     }, [])
 
-    const buscaCategorias = () => {
+    const buscaEditoras = () => {
         axios.get('https://brasilapi.com.br/api/cptec/v1/cidade')
-        // axios.get('http://localhost:8080/api/bookstore/admin/categoria/list')
+        // axios.get('http://localhost:8080/api/bookstore/admin/editora/list')
           .then(function (response) {
-            setCategorias(response.data)
+            setEditoras(response.data)
           })
           .catch(function (error) {
             console.log(error);
           });
     }
 
-    const deletarCategoria = id => {
-        axios.delete(`http://localhost:8080/api/bookstore/admin/categoria/delete/${id}`)
+    const deletarEditora = id => {
+        axios.delete(`http://localhost:8080/api/bookstore/admin/autor/delete/${id}`)
           .then(function () {
-            buscaCategorias()
+            buscaEditoras()
           })
           .catch(function (error) {
             console.log(error);
@@ -42,26 +42,24 @@ const ListarCategoria = () => {
                         <tr>
                            <td className="top center">ID<i class="icofont-users-alt-4"></i></td>
                            <td className="top center"><strong>Nome</strong></td>
-                           <td className="top center"><strong>E-mail</strong></td>
-                           <td className="top center"><strong>Data de Cadastro</strong></td>
+                           <td className="top center"><strong>Ativo</strong></td>                           
                            <td className="top center" colspan="2" width="1"><strong>Ações</strong></td>
                         </tr>
                     
                     </tbody>
                     <tbody>   
-                    {categorias.map(categoria => {
+                    {editoras.map(editora => {
                         return (           
-                        <tr key={categoria.id}> 
-                            <td align="center" >{categoria.id}</td>
-                            <td align="center">{categoria.nome}</td>
-                            <td align="center">{categoria.ativo ? 'Sim' : 'Nao'}</td>
-                            <td align="center">{categoria.estado}</td>
+                        <tr key={editora.id}> 
+                            <td align="center" >{editora.id}</td>
+                            <td align="center">{editora.nome}</td>
+                            <td align="center">{editora.ativo ? 'Sim' : 'Nao'}</td>                            
                             <td align="center">
-                                <Link to={`editar?nome=${categoria.nome}&id=${categoria.id}&ativo=${categoria.ativo}`}>
-                                    <a href="#" className="editar fa fa-fa fa-check-circle" title={`Editar ${categoria.nome}`}></a>
+                                <Link to={`editar?nome=${editora.nome}&id=${editora.id}&ativo=${editora.ativo}`}>
+                                    <a href="#" className="editar fa fa-fa fa-check-circle" title={`Editar ${editora.nome}`}></a>
                                 </Link>                            
                             </td>
-                            <td align="center"> <a href="#" className="deletar fa fa-times-circle" onClick={() => deletarCategoria(categoria.id)} title={`Excluir ${categoria.nome}`}></a> </td>
+                            <td align="center"> <a href="#" className="deletar fa fa-times-circle" onClick={() => deletarEditora(editora.id)} title={`Excluir ${editora.nome}`}></a> </td>
                       
                         </tr>                        
                       )
@@ -73,4 +71,4 @@ const ListarCategoria = () => {
 
 
 );}
-export default ListarCategoria;
+export default ListarEditora;

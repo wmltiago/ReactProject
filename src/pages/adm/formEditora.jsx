@@ -3,6 +3,7 @@ import styled from "styled-components";
 import axios from 'axios';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import ListarEditora from "./listarEditoras";
 
 const ContactWrapper = styled.div`
   display: flex;
@@ -87,12 +88,15 @@ export const FormEditora = () => {
          id="nomeEditora"
          name="nomeEditora"
          required
-         value={nomeEditora ? nomeEditora : ''} onChange={event => setNomeAutor(event.target.value)}/><br/>
+         value={nomeEditora ? nomeEditora : ''} onChange={event => setNomeAutor(event.target.value)}/>
         <Button type="submit">Enviar</Button>
       </Form>
       <br/><br/><br/>
       <div className="#">
                     <Link to="/autores">Lista de editoras</Link>
+      </div>
+      <div>
+        <ListarEditora/>
       </div>
     </ContactWrapper>
   );

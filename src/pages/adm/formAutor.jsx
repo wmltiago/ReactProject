@@ -91,7 +91,7 @@ export const FormAutor = () => {
          id="nomeAutor"
          name="nomeAutor"
          required
-         value={nomeAutor ? nomeAutor : ''} onChange={event => setNomeAutor(event.target.value)}/><br/>
+         value={nomeAutor ? nomeAutor : ''} onChange={event => setNomeAutor(event.target.value)}/>
         <Button type="submit">Enviar</Button>
       </Form>
       <br/><br/><br/>

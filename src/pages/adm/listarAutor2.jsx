@@ -42,8 +42,7 @@ const ListarAutor2 = () => {
                         <tr>
                            <td className="top center">ID<i class="icofont-users-alt-4"></i></td>
                            <td className="top center"><strong>Nome</strong></td>
-                           <td className="top center"><strong>E-mail</strong></td>
-                           <td className="top center"><strong>Data de Cadastro</strong></td>
+                           <td className="top center"><strong>Ativo</strong></td>                           
                            <td className="top center" colspan="2" width="1"><strong>Ações</strong></td>
                         </tr>
                     
@@ -54,8 +53,7 @@ const ListarAutor2 = () => {
                         <tr key={autor.id}> 
                             <td align="center" >{autor.id}</td>
                             <td align="center">{autor.nome}</td>
-                            <td align="center">{autor.ativo ? 'Sim' : 'Nao'}</td>
-                            <td align="center">{autor.estado}</td>
+                            <td align="center">{autor.ativo ? 'Sim' : 'Nao'}</td>                            
                             <td align="center">
                                 <Link to={`editar?nome=${autor.nome}&id=${autor.id}&ativo=${autor.ativo}`}>
                                     <a href="#" className="editar fa fa-fa fa-check-circle" title={`Editar ${autor.nome}`}></a>

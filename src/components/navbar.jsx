@@ -15,17 +15,17 @@ export const Navbar = () => {
       </div>
       <div className="links">
       <Link to="/formLivro" className={location.pathname === "/formLivro" ? "active-link" : ""}>
-          Cadastrar Livro
+          Livro
         </Link>
       
         <Link to="/formAutor" className={location.pathname === "/formAutor" ? "active-link" : ""}>
-          Cadastrar Autor
+          Autor
         </Link>
         <Link to="/formEditora" className={location.pathname === "/formEditora" ? "active-link" : ""}>
-          Cadastrar Editora
+          Editora
         </Link>
         <Link to="/formCategoria" className={location.pathname === "/formCategoria" ? "active-link" : ""}>
-          Cadastrar Categoria
+          Categoria
         </Link>
         <Link to="#" >
            |
