@@ -24,7 +24,7 @@ const ListarEditora = () => {
     }
 
     const deletarEditora = id => {
-        axios.delete(`http://localhost:8080/api/bookstore/admin/autor/delete/${id}`)
+        axios.delete(`http://localhost:8080/api/bookstore/admin/editora/delete/${id}`)
           .then(function () {
             buscaEditoras()
           })

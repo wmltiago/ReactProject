@@ -9,25 +9,25 @@ export const PRODUCTS = [
   {
     id: 1,
     productName: "Portrait Photography",
-    price: 999.0,
+    price: 99.0,
     productImage: product1,
   },
   {
     id: 2,
     productName: "Fashion System",
-    price: 1999.0,
+    price: 199.0,
     productImage: product2,
   },
   {
     id: 3,
     productName: "Great Travel at Desert",
-    price: 699.0,
+    price: 69.89,
     productImage: product3,
   },
   {
     id: 4,
     productName: "Onde Upon a Time",
-    price: 499.0,
+    price: 49.75,
     productImage: product4,
   },
   {
@@ -39,7 +39,7 @@ export const PRODUCTS = [
   {
     id: 6,
     productName: "Simples Way Of Piece Life",
-    price: 199.0,
+    price: 75.50,
     productImage: product6,
   },
 ];

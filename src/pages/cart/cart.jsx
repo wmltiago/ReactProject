@@ -30,9 +30,9 @@ export const Cart = () => {
           <h2>Subtotal: R${totalAmount.toLocaleString()}</h2>
           </div>
           <div className="buttons">
-            <button onClick={() => navigate("/")}>Continue Shopping</button>
+            <button onClick={() => navigate("/")}>Continuar Comprando</button>
             <button onClick={() => {checkout(); navigate("/checkout");}}>
-              Checkout
+              Ir para Pagamento
             </button>
           </div>
         </div>
