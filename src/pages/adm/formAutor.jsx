@@ -3,6 +3,7 @@ import styled from "styled-components";
 import axios from 'axios';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import ListarAutor from "./listarAutor";
 
 const ContactWrapper = styled.div`
   display: flex;
@@ -93,6 +94,9 @@ export const FormAutor = () => {
       <br/><br/><br/>
       <div className="#">
                     <Link to="/listarAutor">Lista de autores</Link>
+      </div>
+      <div>
+        <ListarAutor/>
       </div>
     </ContactWrapper>
   );

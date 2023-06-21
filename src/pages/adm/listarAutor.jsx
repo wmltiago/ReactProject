@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
-import "./index.css"
+// import "./index.css"
 import axios from "axios";
 import { Link } from "react-router-dom";
 
-const Autores = () => {
+const ListarAutor = () => {
 
     const [autores, setAutores] = useState([]);
 
@@ -69,4 +69,4 @@ const Autores = () => {
     )
 }
 
-export default Autores;
+export default ListarAutor;
