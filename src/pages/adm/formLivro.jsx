@@ -55,7 +55,13 @@ const Button = styled.button`
 
 export const FormLivro = () => {
   const [nomeLivro, setNomeLivro] = useState('');
-  const [nomeAutor, setNomeAutor] = useState('');
+  const [paginas, setPaginas] = useState('');
+  const [fotoLivro, setFotoLivro] = useState('');
+  const [precoLivro, setPrecoLivro] = useState('');
+  const [nomeAutorLivro, setNomeAutorLivro] = useState('');
+  const [categoriaLivro, setCategoriaLivro] = useState('');
+  const [editoraLivro, setEditoraLivro] = useState('');
+
   const [autores, setAutores] = useState([]);
 
 
@@ -84,19 +90,30 @@ export const FormLivro = () => {
 
   }, [])
 
-  
 
-
-
-  const salvarAutor = (e) => {
+  const salvarLivro = (e) => {
 
       axios.post('http://localhost:8080/api/bookstore/admin/autor/create', {
-          nome: nomeAutor,
+          titulo: nomeLivro,
+          paginas: paginas,
+          pathFoto: fotoLivro,
+          preco: precoLivro,
+          autor: nomeAutorLivro,
+          editora: editoraLivro,
+          categoria: categoriaLivro,
+
         })
 
         .then(function (response) {
-          alert("Autor salvo com sucesso!")
-          setNomeAutor('')
+          alert("Livro salvo com sucesso!")
+          setNomeAutorLivro('')
+          setPaginas('')
+          setFotoLivro('')
+          setPrecoLivro('')
+          setNomeAutorLivro('')
+          setCategoriaLivro('')
+          setEditoraLivro('')
+
           console.log(response);
 
         })
@@ -113,44 +130,61 @@ export const FormLivro = () => {
   return (
     <ContactWrapper>
       <Title>Cadastro de Livro</Title>
-      <Form onSubmit={salvarAutor}>
-      <label htmlFor="name">Nome do Livro:</label><br/>
+      <Form onSubmit={salvarLivro}>
+      <label htmlFor="name">Nome do Livro:</label>
         <Input type="text"
          id="nomeLivro"
          name="nomeLivro"
          required
-         value={nomeLivro ? nomeLivro : ''} onChange={event => setNomeLivro(event.target.value)}/>
+         value={nomeLivro ? nomeLivro : ''} onChange={event => setNomeLivro(event.target.value)}/><br/>
 
-      <label htmlFor="name">Preço:</label><br/>
+      <label htmlFor="name">Nº de Páginas:</label>
         <Input type="number"
-         id="nomeAutor"
-         name="nomeAutor"
+         id="paginas"
+         name="paginas"
          required
-         value={nomeAutor ? nomeAutor : ''} onChange={event => setNomeAutor(event.target.value)}/>
+         value={paginas ? paginas : ''} onChange={event => setPaginas(event.target.value)}/><br/>
+
+      <label htmlFor="name">Preço:</label>
+        <Input type="number"
+         id="precoLivro"
+         name="precoLivro"
+         required
+         value={precoLivro ? precoLivro : ''} onChange={event => setPrecoLivro(event.target.value)}/><br/>
       
       <label htmlFor="name">Selecione um autor:</label>
-         <select >
+         <select name="nomeAutorLivro" id="nomeAutorLivro">
+          <option></option>
          {autores.map((autor) => (
-         <option key={autor.id}>{autor.nome} {autor.id}</option>))}
+         <option key={autor.id}>{autor.nome}</option>))}
          </select><br/>      
 
       <label htmlFor="name">Selecione uma categoria:</label>
-         <select >
+      <select name="categoriaLivro" id="categoriaLivro">
+         <option></option>
          {autores.map((autor) => (
-         <option key={autor.id}>{autor.nome} {autor.id}</option>))}
+         <option key={autor.id}>{autor.nome}</option>))}
          </select><br/>  
 
-      <label htmlFor="name">Selecione um gênero:</label>
-         <select >
+      <label htmlFor="name">Selecione uma editora:</label>
+      <select name="editoraLivro" id="editoraLivro">
+         <option></option>
          {autores.map((autor) => (
-         <option key={autor.id}>{autor.nome} {autor.id}</option>))}
-         </select><br/> 
+         <option key={autor.id}>{autor.nome}</option>))}
+         </select><br/><br/>
+
+         <label htmlFor="name">Escolha uma Imagem:</label>
+        <Input type="file"
+         id="fotoLivro"
+         name="fotoLivro"
+         required
+         value={fotoLivro ? fotoLivro : ''} onChange={event => setFotoLivro(event.target.value)}/><br/> <br/> 
       
         <Button type="submit">Enviar</Button>
       </Form>
       <br/><br/><br/>
       <div className="#">
-                    <Link to="/autores">Lista de autores</Link>
+                    <Link to="/autores">Lista de livros</Link>
       </div>
     </ContactWrapper>
   );

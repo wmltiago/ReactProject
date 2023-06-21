@@ -34,12 +34,12 @@ export const Navbar = () => {
         <Link to="/" className={location.pathname === "/" ? "active-link" : ""}>
           Shop
         </Link>
-        <Link
+        {/* <Link
           to="/contact"
           className={location.pathname === "/contact" ? "active-link" : ""}
         >
           Contato
-        </Link>
+        </Link> */}
         <Link to="/cart" id="cartlink" className={location.pathname === "/cart" ? "active-link" : ""}>
           <ShoppingCart size={32} />
         </Link>
