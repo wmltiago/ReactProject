@@ -2,8 +2,9 @@ import React from "react";
 import styled from "styled-components";
 import axios from 'axios';
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import ListarAutor from "./listarAutor";
+import ListarAutor2 from "./listarAutor2";
 
 const ContactWrapper = styled.div`
   display: flex;
@@ -54,8 +55,10 @@ const Button = styled.button`
   }
 `;
 
-export const FormAutor = () => {
+export const FormAutor = () => {  
   const [nomeAutor, setNomeAutor] = useState('');
+
+  const location = useLocation();
 
   const salvarAutor = (e) => {
 
@@ -93,10 +96,11 @@ export const FormAutor = () => {
       </Form>
       <br/><br/><br/>
       <div className="#">
-                    <Link to="/listarAutor">Lista de autores</Link>
-      </div>
+                    <Link to="/formAutor" className={location.pathname === "/formAutor" ? "active-link" : ""}>Lista de autores</Link>
+      </div><br/>
       <div>
-        <ListarAutor/>
+        <ListarAutor2/>
+        {/* <ListarAutor/> */}
       </div>
     </ContactWrapper>
   );

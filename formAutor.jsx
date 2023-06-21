@@ -4,6 +4,7 @@ import axios from 'axios';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import ListarAutor from "./listarAutor";
+import "./cssAdm/forms.css";
 
 const ContactWrapper = styled.div`
   display: flex;
@@ -82,7 +83,8 @@ export const FormAutor = () => {
   return (
     <ContactWrapper>
       <Title>Cadastro de Autor</Title>
-      <Form onSubmit={salvarAutor}>
+      <div className="container_form">
+      <Form onSubmit={salvarAutor} >
         <label htmlFor="name">Nome do Autor:</label><br/>
         <Input type="text"
          id="nomeAutor"
@@ -91,6 +93,7 @@ export const FormAutor = () => {
          value={nomeAutor ? nomeAutor : ''} onChange={event => setNomeAutor(event.target.value)}/><br/>
         <Button type="submit">Enviar</Button>
       </Form>
+      </div>
       <br/><br/><br/>
       <div className="#">
                     <Link to="/listarAutor">Lista de autores</Link>
