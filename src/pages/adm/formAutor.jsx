@@ -92,7 +92,7 @@ export const FormAutor = () => {
       </Form>
       <br/><br/><br/>
       <div className="#">
-                    <Link to="/autores">Lista de autores</Link>
+                    <Link to="/listarAutor">Lista de autores</Link>
       </div>
     </ContactWrapper>
   );
